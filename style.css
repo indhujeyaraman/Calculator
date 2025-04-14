@@ -1,120 +1,93 @@
-/* Base Styles */ 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: black;
-  color: white;
-  font-family: Arial, sans-serif;
+  background-color: #000;
+  font-family: 'Arial', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
+  min-height: 100vh;
+  padding: 20px;
 }
+
+
+.calculator-box {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  max-width: 400px;
+  width: 100%;
+}
+
 
 .calculation {
   color: white;
-  font-size: 45px;
+  font-size: 2.5rem;
   margin-bottom: 20px;
   text-align: right;
-  width: 100%;
-  padding: 0 15px;
+  padding: 10px 15px;
+  background-color: #111;
+  border-radius: 10px;
+  min-height: 60px;
+  overflow-x: auto;
 }
+
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
 
 button {
-  font-size: 26px;
+  font-size: 1.5rem;
   border: none;
   height: 60px;
-  width: 60px;
+  width: 100%;
   color: white;
-  border-radius: 30px;
-  margin: 5px;
+  border-radius: 50%;
+  background-color: #333;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.gray-button {
-  background-color: rgb(51, 51, 51);
+button:hover {
+  background-color: #444;
 }
 
 .orange-button {
-  background-color: rgb(254, 160, 10);
+  background-color: #fe9e0d;
+}
+
+.orange-button:hover {
+  background-color: #ffae32;
 }
 
 .clear-button {
-  font-size: 17px;
-  background-color: rgb(51, 51, 51);
+  grid-column: span 4;
+  background-color: #444;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  height: 50px;
 }
 
-button:focus {
-  outline: none;
-}
-
-/* Layout for Buttons */
-.container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  max-width: 380px;
-  width: 100%;
-}
-
-.container p {
-  display: flex;
-  justify-content: center;
-  margin: 10px 0;
-}
-
-/* Media Queries for Responsiveness */
-
-/* Small Screens */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .calculation {
-    font-size: 36px;
-    padding: 0 10px;
-  }
-
-  .container {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
+    font-size: 2rem;
   }
 
   button {
+    font-size: 1.3rem;
     height: 50px;
-    width: 50px;
-    font-size: 22px;
-  }
-}
-
-/* Medium Screens (Tablets) */
-@media (min-width: 481px) and (max-width: 768px) {
-  .calculation {
-    font-size: 40px;
   }
 
-  .container {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-  }
-
-  button {
-    height: 55px;
-    width: 55px;
-    font-size: 24px;
-  }
-}
-
-/* Large Screens */
-@media (min-width: 769px) {
-  .calculation {
-    font-size: 45px;
-  }
-
-  .container {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-  }
-
-  button {
-    height: 60px;
-    width: 60px;
-    font-size: 26px;
+  .clear-button {
+    font-size: 1rem;
   }
 }
