@@ -1,4 +1,4 @@
-
+/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +15,7 @@ body {
   padding: 20px;
 }
 
-
+/* Calculator container (box) */
 .calculator-box {
   background-color: #1e1e1e;
   padding: 20px;
@@ -25,7 +25,7 @@ body {
   width: 100%;
 }
 
-
+/* Display */
 .calculation {
   color: white;
   font-size: 2.5rem;
@@ -38,13 +38,14 @@ body {
   overflow-x: auto;
 }
 
+/* Buttons grid */
 .buttons-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
 }
 
-
+/* Button styles */
 button {
   font-size: 1.5rem;
   border: none;
@@ -77,6 +78,7 @@ button:hover {
   height: 50px;
 }
 
+/* Media Queries for Responsive Design */
 @media (max-width: 600px) {
   .calculation {
     font-size: 2rem;
@@ -84,7 +86,7 @@ button:hover {
 
   button {
     font-size: 1.3rem;
-    height: 50px;
+/*     height: 50px; */
   }
 
   .clear-button {
